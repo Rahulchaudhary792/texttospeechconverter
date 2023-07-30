@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset = "UTF-8">
+       <meta name = "Description" content = "MyDescription">
+       <meta name = "Author" content = "Id, Phonenumber">
+       <meta name = "Keywords" content = "HTML, CSS, BOOTSTRAP, JAVASCRIPT TUTORIALS">
+       <meta name = "Viewport" content = "width=device-width, initial-scale=1.0">
+       <title>Text to Speech Converter</title>
+       <style>
+          .body1 {
+            background: linear-gradient(135deg,blue,red);
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+            overflow: none;
+          }
+          .div1 {
+            background: linear-gradient(135deg,blue,red);
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+            min-height: 100vh;
+          }
+          .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .container h1 {
+            color: white;
+            font-family: Arial;
+          }
+          .container h1 span {
+            color: red;
+            margin-left: 10px;
+          }
+          .container1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .container1 textarea {
+            width: 360px;
+            height: 150px;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: rgb(59, 54, 54);
+            border-radius: 10px;
+            border: none;
+          }
+          .container1 textarea::placeholder {
+            color: white;
+          }
+          .container2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+          }
+          .container2 button {
+            width: 150px;
+            height: 30px;
+            padding: 0px 20px;
+            color: white;
+            background: linear-gradient(135deg, red, blue);
+            border: none;
+            font-family: Arial;
+            font-weight: 600;
+          }
+       </style>
+    </head>
+    <body class = "body1">
+        <div class = "div1">
+            <div class = "container">
+                <h1>Text to Speech<span>Converter</span></h1>
+            </div>
+            <div class = "container1">
+                <textarea placeholder = "Write Something....." class = "textarea1"></textarea>
+            </div>
+            <div class = "container2">
+                <button class = "button1">Listen</button>
+            </div>
+        </div>
+        <script>
+            let speech = new SpeechSynthesisUtterance();
+            document.querySelector('.button1').addEventListener('click', () => {
+                let textarea1 = document.querySelector('.textarea1');
+                speech.text = textarea1.value;
+                speechSynthesis.speak(speech);
+            })
+        </script>
+    </body>
+</html>
